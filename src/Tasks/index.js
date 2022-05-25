@@ -1,3 +1,4 @@
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 import "./style.css";
 
 const Tasks = (props) => (
@@ -5,6 +6,7 @@ const Tasks = (props) => (
     <ul className="section__body">
         {props.tasks.map(task => (
             <li className={`list__block ${task.check && props.hideCheckTasks ? "list__block--hidden" : ""}`}>
+                {key = task.id}
                 <button className="list__button list__button--checker">
                     {task.check
                         ? "✓"
