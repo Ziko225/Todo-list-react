@@ -5,14 +5,20 @@ import Section from "./Section"
 import Header from "./Header"
 import Main from "./Main"
 import "./index.css";
+import { useState } from "react";
 
 function App() {
+  const [hideCheck, setHideCheck] = useState(false);
+
+  const toggleHideCheck = () => {
+    setHideCheck(hideCheck => ! hideCheck);
+  }
+
 
   const tasks = [
     { id: 1, content: "task1", check: true },
     { id: 2, content: "task2", check: false },
   ]
-  const hideCheck = false
 
   return (
     <Main>
@@ -23,7 +29,7 @@ function App() {
       />
       <Section
         title="Lista zadań"
-        buttons={<Buttons tasks={tasks} hideCheck={hideCheck} />}
+        buttons={<Buttons tasks={tasks} hideCheck={hideCheck} toggleHideCheck={toggleHideCheck}/>}
         content={<Tasks tasks={tasks} hideCheck={hideCheck} />}
       />
     </Main>
