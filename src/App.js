@@ -10,15 +10,18 @@ import { useState } from "react";
 function App() {
   const [hideCheck, setHideCheck] = useState(false);
 
-  const toggleHideCheck = () => {
-    setHideCheck(hideCheck => ! hideCheck);
-  }
-
-
-  const tasks = [
+  const [tasks, setTasks] = useState([
     { id: 1, content: "task1", check: true },
     { id: 2, content: "task2", check: false },
-  ]
+  ]);
+
+  const toggleHideCheck = () => {
+    setHideCheck(hideCheck => !hideCheck);
+  };
+
+  const removeTask = (id) => {
+    setTasks(tasks => tasks.filter(task => task.id !== id))
+  }
 
   return (
     <Main>
@@ -29,8 +32,8 @@ function App() {
       />
       <Section
         title="Lista zadań"
-        buttons={<Buttons tasks={tasks} hideCheck={hideCheck} toggleHideCheck={toggleHideCheck}/>}
-        content={<Tasks tasks={tasks} hideCheck={hideCheck} />}
+        buttons={<Buttons tasks={tasks} hideCheck={hideCheck} toggleHideCheck={toggleHideCheck} />}
+        content={<Tasks tasks={tasks} hideCheck={hideCheck} removeTask={removeTask}/>}
       />
     </Main>
   );
