@@ -1,6 +1,7 @@
-.header__buttons{
+.header__buttons {
     display: flex;
 }
+
 .buttons {
     align-self: center;
     color: teal;
@@ -10,27 +11,34 @@
     margin: 0px 10px;
     transition: 0.3s;
 }
-.buttons:disabled{
-    color:#bbb;
+
+.buttons:disabled {
+    color: #bbb;
 }
-.buttons:disabled:hover{
-    color:#bbb;
+
+.buttons:disabled:hover {
+    color: #bbb;
+    cursor: default;
 }
-.buttons:disabled:active{
-    color:#bbb;
+
+.buttons:disabled:active {
+    color: #bbb;
 }
 
 .buttons:hover {
-    color: rgb(0, 169, 169)
+    color: rgb(0, 169, 169);
+    cursor: pointer;
 }
 
 .buttons:active {
     color: rgb(0, 189, 189)
 }
+
 @media (max-width:700px) {
     .header__buttons {
         flex-direction: column;
     }
+
     .buttons {
         margin-top: 20px;
     }
