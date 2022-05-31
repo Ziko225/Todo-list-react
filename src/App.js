@@ -33,6 +33,13 @@ function App() {
     }))
   }
 
+  const setAllCheck = () => {
+    setTasks(tasks => tasks.map(task => ({
+      ...task,
+      check: true,
+    })))
+  }
+
   return (
     <Main>
       <Header title="Lista zadań" />
@@ -42,7 +49,7 @@ function App() {
       />
       <Section
         title="Lista zadań"
-        buttons={<Buttons tasks={tasks} hideCheck={hideCheck} toggleHideCheck={toggleHideCheck} />}
+        buttons={<Buttons tasks={tasks} hideCheck={hideCheck} toggleHideCheck={toggleHideCheck} setAllCheck={setAllCheck} />}
         content={<Tasks tasks={tasks} hideCheck={hideCheck} removeTask={removeTask} toggleTaskCheck={toggleTaskCheck} />}
       />
     </Main>
