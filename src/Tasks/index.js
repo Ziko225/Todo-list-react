@@ -1,13 +1,11 @@
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
 import "./style.css";
 
-const Tasks = ({ tasks, removeTask, hideCheck }) => (
+const Tasks = ({ tasks, removeTask, hideCheck, toggleTaskCheck }) => (
 
     <ul className="section__body">
         {tasks.map(task => (
             <li key={task.id} className={`list__block ${task.check && hideCheck ? "list__block--hidden" : ""}`}>
-
-                <button className="list__button list__button--checker">
+                <button onClick={() => toggleTaskCheck(task.id)} className="list__button list__button--checker">
                     {task.check
                         ? "✓"
                         : ""}</button>
