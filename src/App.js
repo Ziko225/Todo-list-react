@@ -12,7 +12,7 @@ function App() {
     { id: 1, content: "task1", check: true },
     { id: 2, content: "task2", check: false },
   ]
-  const hideCheckTasks = false
+  const hideCheck = false
 
   return (
     <Main>
@@ -23,8 +23,8 @@ function App() {
       />
       <Section
         title="Lista zadań"
-        buttons={<Buttons tasks={tasks} hideCheckTasks={hideCheckTasks} />}
-        content={<Tasks tasks={tasks} hideCheckTasks={hideCheckTasks} />}
+        buttons={<Buttons tasks={tasks} hideCheck={hideCheck} />}
+        content={<Tasks tasks={tasks} hideCheck={hideCheck} />}
       />
     </Main>
   );
