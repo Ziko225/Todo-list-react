@@ -1,5 +1,5 @@
 ## Demo page:
-https://ziko225.github.io/Todos-list-react/
+https://ziko225.github.io/Todo-list-react/
 
 ## Technologies:
 - HTML
