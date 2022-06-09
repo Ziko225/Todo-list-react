@@ -5,22 +5,29 @@ import Section from "./Section"
 import Header from "./Header"
 import Main from "./Main"
 import "./index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
+
+
   const [hideCheck, setHideCheck] = useState(false);
 
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "task1", check: true },
-    { id: 2, content: "task2", check: false },
-  ]);
+  const storageTasks = localStorage.getItem("tasks")
+
+  const [tasks, setTasks] = useState(
+    storageTasks ? JSON.parse(storageTasks) : [])
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
 
   const toggleHideCheck = () => {
     setHideCheck(hideCheck => !hideCheck);
   };
 
   const removeTask = (id) => {
-    setTasks(tasks => tasks.filter(task => task.id !== id))
+    setTasks(tasks => tasks.filter(task => task.id !== id));
   };
 
   const toggleTaskCheck = (id) => {
@@ -43,6 +50,7 @@ function App() {
   const addNewTask = (content) => {
     setTasks(tasks => [
       ...tasks,
+
       {
         content,
         done: false,
