@@ -8,8 +8,6 @@ import "./index.css";
 import { useState, useEffect } from "react";
 
 function App() {
-
-
   const [hideCheck, setHideCheck] = useState(false);
 
   const storageTasks = localStorage.getItem("tasks")
@@ -20,7 +18,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
-
 
   const toggleHideCheck = () => {
     setHideCheck(hideCheck => !hideCheck);

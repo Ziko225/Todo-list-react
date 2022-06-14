@@ -1,7 +1,6 @@
 import "./style.css";
 
 const Tasks = ({ tasks, removeTask, hideCheck, toggleTaskCheck }) => (
-
     <ul className="section__body">
         {tasks.map(task => (
             <li key={task.id} className={`list__block ${task.check && hideCheck ? "list__block--hidden" : ""}`}>
@@ -16,6 +15,6 @@ const Tasks = ({ tasks, removeTask, hideCheck, toggleTaskCheck }) => (
             </li>
         ))}
     </ul>
-)
+);
 
 export default Tasks;
