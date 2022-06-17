@@ -1,11 +1,11 @@
-import "./style.css";
+import {Block, Header, Content} from "./styled"
 
 const Section = ({ title, body, content, buttons }) => (
-    <section className="section">
-        <h2 className="section__header">{title} {buttons}</h2>
-        <div className="section__body">{body}</div>
+    <Block>
+        <Header className="section__header">{title} {buttons}</Header>
+        <Content className="section__body">{body}</Content>
         {content}
-    </section>
+    </Block>
 );
 
 export default Section;

@@ -1,14 +1,13 @@
-import "./style.css";
+import { Button, ButtonsBlock } from "./styled"
 
 const Buttons = ({ tasks, hideCheck, toggleHideCheck, setAllCheck }) => (
     tasks.length === 0 ?
         null
         :
-        <div className="header__buttons">
-            <button onClick={toggleHideCheck} className={"buttons"}>{hideCheck ? "Pokaż" : "Ukryj"} ukończone</button>
-            <button onClick={setAllCheck} disabled={tasks.every(({ check }) => check)} className={`buttons`}>Ukończ wszystkie</button>
-        </div>
+        <ButtonsBlock>
+            <Button onClick={toggleHideCheck}>{hideCheck ? "Pokaż" : "Ukryj"} ukończone</Button>
+            <Button onClick={setAllCheck} disabled={tasks.every(({ check }) => check)}>Ukończ wszystkie</Button>
+        </ButtonsBlock>
 );
 
 export default Buttons;
-
