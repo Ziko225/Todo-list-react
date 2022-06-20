@@ -50,7 +50,7 @@ function App() {
 
       {
         content,
-        done: false,
+        check: false,
         id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
       }
     ])
