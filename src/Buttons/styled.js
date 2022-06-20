@@ -19,6 +19,7 @@ export const Button = styled.button`
 
     &:hover{
         color: rgb(0, 169, 169);
+        cursor:pointer;
     }
 
     &:hover:disabled{
