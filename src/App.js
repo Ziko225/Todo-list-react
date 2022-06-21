@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useTasks } from "./useTasks"
+
 import Form from "./Form";
 import Tasks from "./Tasks"
 import Buttons from "./Buttons"
@@ -5,56 +8,19 @@ import Section from "./Section"
 import Header from "./Header"
 import Main from "./Main"
 import "./index.css";
-import { useState, useEffect } from "react";
 
 function App() {
+
   const [hideCheck, setHideCheck] = useState(false);
+  const toggleHideCheck = () => { setHideCheck(hideCheck => !hideCheck); };
 
-  const storageTasks = localStorage.getItem("tasks")
-
-  const [tasks, setTasks] = useState(
-    storageTasks ? JSON.parse(storageTasks) : [])
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
-
-  const toggleHideCheck = () => {
-    setHideCheck(hideCheck => !hideCheck);
-  };
-
-  const removeTask = (id) => {
-    setTasks(tasks => tasks.filter(task => task.id !== id));
-  };
-
-  const toggleTaskCheck = (id) => {
-    setTasks(tasks => tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, check: !task.check };
-      }
-
-      return task;
-    }))
-  };
-
-  const setAllCheck = () => {
-    setTasks(tasks => tasks.map(task => ({
-      ...task,
-      check: true,
-    })))
-  };
-
-  const addNewTask = (content) => {
-    setTasks(tasks => [
-      ...tasks,
-
-      {
-        content,
-        check: false,
-        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-      }
-    ])
-  };
+  const [
+    tasks,
+    removeTask,
+    toggleTaskCheck,
+    setAllCheck,
+    addNewTask,
+  ] = useTasks();
 
   return (
     <Main>

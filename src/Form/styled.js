@@ -13,7 +13,6 @@ export const FormInput = styled.input`
     flex-grow: 2;
     height: 30px;
     width: calc(100% - 8px);
-    padding-left: 7px;
 `;
 
 export const Button = styled.button`
