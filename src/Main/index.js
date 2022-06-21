@@ -1,7 +1,7 @@
 import {MainElement} from "./styled"
 
 const Main = ({ children }) => (
-  <MainElement className="main">
+  <MainElement>
     {children}
   </MainElement>
 );

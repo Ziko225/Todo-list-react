@@ -1,9 +1,9 @@
-import {Block, Header, Content} from "./styled"
+import { Block, Header, Content } from "./styled"
 
 const Section = ({ title, body, content, buttons }) => (
     <Block>
-        <Header className="section__header">{title} {buttons}</Header>
-        <Content className="section__body">{body}</Content>
+        <Header>{title} {buttons}</Header>
+        <Content>{body}</Content>
         {content}
     </Block>
 );
