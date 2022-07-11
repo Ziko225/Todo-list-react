@@ -1,25 +1,32 @@
 import { useRef, useState } from "react";
 import { FormBlock, FormInput, Button } from "./styled"
+import { useDispatch } from "react-redux/es/hooks/useDispatch";
+import { addTask } from "../tasksSlice";
+import { nanoid } from "@reduxjs/toolkit";
 
-const Form = ({ addNewTask }) => {
+const Form = () => {
     const [newTaskContent, setNewTaskContent] = useState("");
-
     const inputRef = useRef(null);
+
+    const dispatch = useDispatch();
 
     const focusInput = () => {
         inputRef.current.focus();
     }
-
     const onFormSubmit = (event) => {
         event.preventDefault();
 
         if (newTaskContent.trim() === "") {
             return
         }
-        addNewTask(newTaskContent.trim());
+        dispatch(addTask({
+            content: newTaskContent.trim(),
+            done: false,
+            id: nanoid(),
+        }));
+
         setNewTaskContent("")
     };
-
     return (
         <FormBlock onSubmit={onFormSubmit}>
             <FormInput

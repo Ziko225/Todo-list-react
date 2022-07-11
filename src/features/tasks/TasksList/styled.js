@@ -20,7 +20,7 @@ export const Content = styled.span`
     flex-grow: 1;
     padding: 5px;
 
-    ${({ check }) => check && css`
+    ${({ done }) => done && css`
         text-decoration: line-through;
     `}
 `;
@@ -34,7 +34,7 @@ export const Button = styled.button`
     color: white;
     transition: 0.3s;
 
-    ${({ toggleCheck }) => toggleCheck && css`
+    ${({ toggleDone }) => toggleDone && css`
          background-color: rgb(6, 180, 0);
          cursor:pointer;
          &:hover{
