@@ -7,8 +7,8 @@ const tasksSlice = createSlice({
         hideDone: false,
     },
     reducers: {
-        addTask: ({ tasks }, { payload }) => {
-            tasks.push(payload)
+        addTask: ({ tasks }, { payload: task }) => {
+            tasks.push(task)
         },
         toggleHideDone: (state, action) => {
             state.hideDone = !state.hideDone;
