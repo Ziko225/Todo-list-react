@@ -3,13 +3,21 @@ https://ziko225.github.io/Todo-list-react/
 
 ## Technologies:
 - HTML
-- CSS
-- Flex 
-- BEM
-- JS
+- CSS 
+  - Convention BEM
+  - Flex 
+- JavaScript
+  - Async / Await
 - React
-- Create-React-App
-- Babel
+  - Create-React-App
+  - React Router
+  - React Redux
+- Redux
+  - Redux-toolkit
+  - Redux-saga
+- Styled-components
+- JSON
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
