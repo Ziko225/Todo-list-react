@@ -1,8 +1,9 @@
-import { call, put, throttle } from "@redux-saga/core/effects";
+import { call, put, throttle, takeEvery, select } from "redux-saga/effects";
 import { getExampleTasks } from "./getExampleTasks";
-import { fetchExampleTasks, setTasks } from "./tasksSlice";
+import { saveTasksInLocalStorage } from "./tasksLocalStorage";
+import { fetchExampleTasks, selectTasks, setTasks } from "./tasksSlice";
 
-function* fetchExampleTasksHandler() {console.log("hello world")
+function* fetchExampleTasksHandler() {
     try {
         const exapmleTasks = yield call(getExampleTasks)
         yield put(setTasks(exapmleTasks))
@@ -11,6 +12,12 @@ function* fetchExampleTasksHandler() {console.log("hello world")
     }
 }
 
+function* saveTasksInLocalStorageHandler() {
+    const tasks = yield select(selectTasks);
+    yield call(saveTasksInLocalStorage, tasks)
+}
+
 export function* watchFetchExpampleTasks() {
     yield throttle(2000, fetchExampleTasks.type, fetchExampleTasksHandler);
+    yield takeEvery("*", saveTasksInLocalStorageHandler)
 }
