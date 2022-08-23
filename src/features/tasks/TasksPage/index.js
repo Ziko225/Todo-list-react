@@ -5,11 +5,16 @@ import Main from "../../../common/Main"
 import { addTask, removeTask, setAllDone } from "../tasksSlice"
 import Section from "../../../common/Section";
 import Form from "./Form"
+import Search from "./Search"
 
 function TasksPage() {
   return (
     <Main>
       <Header title="Lista zadań" />
+      <Section
+        title="Wyszukiwarka"
+        body={<Search />}
+      />
       <Section
         title="Dodaj nowe zadanie"
         body={<Form addTask={addTask} />}
