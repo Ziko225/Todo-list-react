@@ -43,12 +43,12 @@ export const {
     setAllDone,
     removeTask,
     fetchExampleTasks,
-    setTasks,
+    setTasks
 } = tasksSlice.actions;
 
-export const selectTasks = state => state.tasks
+export const selectTasks = state => state.tasks;
 export const selectHideDone = state => selectTasks(state).hideDone;
-export const selectAreTasksEmpty = state => selectTasks(state).length === 0;
+export const selectAreTasksEmpty = state => selectTasks(state).tasks.length === 0;
 export const selectIsEveryTaskDone = state => selectTasks(state).tasks.every(({ done }) => done);
 export const getTaskById = (state, taskId) => selectTasks(state).tasks.find(({ id }) => id === taskId);
 
