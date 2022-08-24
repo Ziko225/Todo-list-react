@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components"
 
 export const List = styled.ul`
@@ -12,7 +13,7 @@ export const Item = styled.li`
     word-break: break-word;
 
     ${({ hidden }) => hidden && css`
-        display:none
+        display:none;
     `}
 `;
 
@@ -22,7 +23,17 @@ export const Content = styled.span`
 
     ${({ done }) => done && css`
         text-decoration: line-through;
-    `}
+    `};
+`;
+
+export const Link = styled(NavLink)`
+    margin:10px;
+    text-decoration: none;
+    color: teal;
+    transition: 0.3s;
+    :Hover{
+        filter: brightness(130%)
+    }
 `;
 
 export const Button = styled.button`

@@ -1,32 +1,37 @@
+import { addTask, removeTask, setAllDone } from "../tasksSlice"
+import ButtonExampleTasks from "./Buttons/ButtonExampleTasks"
 import TaskList from "./TasksList"
 import Buttons from "./Buttons/Buttons"
-import Header from "../../../common/Header"
-import Main from "../../../common/Main"
-import { addTask, removeTask, setAllDone } from "../tasksSlice"
-import Section from "../../../common/Section";
 import Form from "./Form"
 import Search from "./Search"
-import ButtonExampleTasks from "./Buttons/ButtonExampleTasks"
+import Header from "../../../common/Header"
+import Main from "../../../common/Main"
+import Section from "../../../common/Section";
+import Nav from "../../../common/Nav"
 
 function TasksPage() {
   return (
-    <Main>
-      <Header title="Lista zadań" />
-      <Section
-        title="Wyszukiwarka"
-        buttons={<ButtonExampleTasks />}
-        body={<Search />}
+    <>
+      <Nav
       />
-      <Section
-        title="Dodaj nowe zadanie"
-        body={<Form addTask={addTask} />}
-      />
-      <Section
-        title="Lista zadań"
-        buttons={<Buttons setAllDone={setAllDone} />}
-        content={<TaskList removeTask={removeTask} />}
-      />
-    </Main>
+      <Main>
+        <Header title="Lista zadań" />
+        <Section
+          title="Wyszukiwarka"
+          buttons={<ButtonExampleTasks />}
+          body={<Search />}
+        />
+        <Section
+          title="Dodaj nowe zadanie"
+          body={<Form addTask={addTask} />}
+        />
+        <Section
+          title="Lista zadań"
+          buttons={<Buttons setAllDone={setAllDone} />}
+          content={<TaskList removeTask={removeTask} />}
+        />
+      </Main>
+    </>
   );
 };
 

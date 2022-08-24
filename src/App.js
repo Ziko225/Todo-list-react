@@ -7,30 +7,20 @@ import Page404 from "./features/page404/Page404.js";
 
 export default () => (
     <HashRouter>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/tasks">Zadania</Link>
-                </li>
-                <li>
-                    <Link to="/autor">O autorze</Link>
-                </li>
-            </ul>
-            <Redirect to="/tasks">Zadania</Redirect>
-            <Switch>
-                <Route path="/tasks/:id">
-                    <TaskPage />
-                </Route>
-                <Route path="/autor">
-                    <AutorPage />
-                </Route>
-                <Route path="/tasks">
-                    <TasksPage />
-                </Route>
-                <Route path="/">
-                    <Page404 />
-                </Route>
-            </Switch>
-        </nav>
+        <Redirect to="/tasks">Zadania</Redirect>
+        <Switch>
+            <Route path="/tasks/:id">
+                <TaskPage />
+            </Route>
+            <Route path="/autor">
+                <AutorPage />
+            </Route>
+            <Route path="/tasks">
+                <TasksPage />
+            </Route>
+            <Route path="/">
+                <Page404 />
+            </Route>
+        </Switch>
     </HashRouter>
 );
