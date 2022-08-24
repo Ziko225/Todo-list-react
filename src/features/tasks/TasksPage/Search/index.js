@@ -1,5 +1,5 @@
 import { useHistory, useLocation } from "react-router-dom"
-import { FormBlock, FormInput, Button } from "../Form/styled"
+import { FormInput } from "../Form/styled"
 
 export const searchQueryParamName = "szukaj"
 export default () => {

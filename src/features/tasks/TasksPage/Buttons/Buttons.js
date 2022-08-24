@@ -19,7 +19,6 @@ const Buttons = () => {
         <ButtonsBlock>
             {!areTasksEmpty && (
                 <>
-                    <Button onClick={() => dispatch(fetchExampleTasks())}> Pobierz przykład</Button>
                     <Button onClick={() => dispatch(toggleHideDone())}>
                         {hideDone ? "Pokaż" : "Ukryj"} ukończone</Button>
                     <Button onClick={() => dispatch(setAllDone())}

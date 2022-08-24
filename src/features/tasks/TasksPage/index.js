@@ -1,11 +1,12 @@
 import TaskList from "./TasksList"
-import Buttons from "./Buttons"
+import Buttons from "./Buttons/Buttons"
 import Header from "../../../common/Header"
 import Main from "../../../common/Main"
 import { addTask, removeTask, setAllDone } from "../tasksSlice"
 import Section from "../../../common/Section";
 import Form from "./Form"
 import Search from "./Search"
+import ButtonExampleTasks from "./Buttons/ButtonExampleTasks"
 
 function TasksPage() {
   return (
@@ -13,6 +14,7 @@ function TasksPage() {
       <Header title="Lista zadań" />
       <Section
         title="Wyszukiwarka"
+        buttons={<ButtonExampleTasks />}
         body={<Search />}
       />
       <Section
