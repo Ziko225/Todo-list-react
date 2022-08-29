@@ -1,32 +1,35 @@
 import styled from "styled-components";
 
 export const FormBlock = styled.form`
-    display: flex;
-    padding: 10px;
-
+    flex-basis:100%;
+    display:flex;
     @media (max-width: 767px) {
         flex-direction: column;
     }
 `;
 
 export const FormInput = styled.input`
-    flex-grow: 2;
     height: 30px;
-    width: calc(100% - 8px);
+    width: 100%;
+    flex-basis: 2;
+    @media (max-width: 767px) {
+        flex-shrink: 0;
+        width: 98%;
+    }
 `;
 
 export const Button = styled.button`
-     flex-shrink: 0;
+    flex-shrink: 0;
     height: 35.94px;
     background-color: teal;
     color: white;
     border-style: none;
     transition: 0.3s;
-    margin-left: 20px;
+    margin-left: 10px;
 
     &:hover{
         background-color: rgb(0, 162, 162);
-    transform: scale(1.07);
+    transform: scale(1.06);
     cursor:pointer;
     }
 

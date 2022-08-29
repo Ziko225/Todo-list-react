@@ -16,9 +16,10 @@ export const Header = styled.h2`
 export const Block = styled.section`
     background-color: white;
     margin: 10px 0;
-    box-shadow: 0.5px 0.5px 1px #ccc;
+    box-shadow: 0.5px 0.5px 1px #aaa;
 `;
 
 export const Content = styled.div`
-padding: 10px;
+    display:flex;
+    padding: 20px;
 `;

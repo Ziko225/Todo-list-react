@@ -7,7 +7,6 @@ import { nanoid } from "@reduxjs/toolkit";
 const Form = () => {
     const [newTaskContent, setNewTaskContent] = useState("");
     const inputRef = useRef(null);
-
     const dispatch = useDispatch();
 
     const focusInput = () => {
@@ -15,16 +14,20 @@ const Form = () => {
     };
     const onFormSubmit = (event) => {
         event.preventDefault();
+
         if (newTaskContent.trim() === "") {
             return
         };
+
         dispatch(addTask({
             content: newTaskContent.trim(),
             done: false,
             id: nanoid(),
         }));
+
         setNewTaskContent("")
     };
+
     return (
         <FormBlock onSubmit={onFormSubmit}>
             <FormInput
@@ -32,8 +35,8 @@ const Form = () => {
                 value={newTaskContent}
                 autoFocus
                 placeholder="Co jest do zrobienia?*"
-                onChange={({ target }) => setNewTaskContent(target.value)}
-            />
+                onChange={({ target }) => setNewTaskContent(target.value)}>
+            </FormInput>
             <Button onClick={focusInput}>Dodaj zadanie</Button>
         </FormBlock>
     );

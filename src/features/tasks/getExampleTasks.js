@@ -6,4 +6,4 @@ export const getExampleTasks = async () => {
     }
 
     return await response.json()
-}
+};

@@ -27,11 +27,17 @@ const tasksSlice = createSlice({
             const index = tasks.findIndex(({ id }) => id === taskId);
             tasks.splice(index, 1)
         },
-        fetchExampleTasks: () => {
-
+        fetchExampleTasks: (state) => {
+            state.loading = true
         },
-        setTasks: (state, { payload: tasks }) => {
+        fetchExampleTasksLoading: (state, { payload: tasks }) => {
             state.tasks = tasks;
+            state.loading = false
+            console.log("Loading")
+        },
+        fetchExampleTasksError: (state) => {
+            state.error = true
+            console.log("error")
         },
     },
 });
@@ -43,18 +49,18 @@ export const {
     setAllDone,
     removeTask,
     fetchExampleTasks,
-    setTasks
+    fetchExampleTasksLoading,
+    fetchExampleTasksError,
 } = tasksSlice.actions;
 
 const selectTasksState = state => state.tasks;
 
 export const selectTasks = state => selectTasksState(state).tasks;
 export const selectHideDone = state => selectTasksState(state).hideDone;
-export const selectIsLoading = state => selectTasksState(state).isLoading;
-export const selectIsError = state => selectTasksState(state).isError;
 export const selectAreTasksEmpty = state => selectTasks(state).length === 0;
 export const selectIsEveryTaskDone = state => selectTasks(state).every(({ done }) => done);
-
+export const selectAreExpampleTasksLoading = state => selectTasksState(state).loading;
+export const selectExpampleTasksError = state => selectTasksState(state).error;
 
 export const getTaskById = (state, taskId) =>
     selectTasks(state).find(({ id }) => id === taskId);
@@ -67,6 +73,6 @@ export const selectTasksByQuery = (state, query) => {
     }
     return tasks.filter(({ content }) =>
         content.toUpperCase().includes(query.trim().toUpperCase()))
-}
+};
 
 export default tasksSlice.reducer;

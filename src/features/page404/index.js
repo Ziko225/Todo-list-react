@@ -11,8 +11,7 @@ function Page404() {
                 title="Strona o podanym adresie nie istnieje"
                 body={<>
                     <ul>
-                        <li><Link to="/tasks">Zadania</Link></li>
-                        <li><Link to="/autor">O autorze</Link></li>
+                        <li><Link to="/tasks">Powrót</Link></li>
                     </ul>
                 </>
                 }

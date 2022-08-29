@@ -1,9 +1,9 @@
 
-import { HashRouter, Link, Redirect, Route, Switch } from "react-router-dom";
-import TasksPage from "./features/tasks/TasksPage/index.js";
-import TaskPage from "./features/tasks/TaskPage/index.js";
-import AutorPage from "./features/authorPage/AuthorPage.js";
-import Page404 from "./features/page404/Page404.js";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import TasksPage from "./features/tasks/TasksPage";
+import TaskPage from "./features/tasks/TaskPage";
+import Page404 from "./features/page404";
+import AutorPage from "./features/author";
 
 export default () => (
     <HashRouter>

@@ -3,7 +3,7 @@ import Header from "../../common/Header"
 import Main from "../../common/Main"
 import Nav from "../../common/Nav";
 
-function AutorPage() {
+function Autor() {
     return (
         <>
             <Nav />
@@ -18,4 +18,4 @@ function AutorPage() {
     );
 };
 
-export default AutorPage;
+export default Autor;

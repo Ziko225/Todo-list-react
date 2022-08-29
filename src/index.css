@@ -11,3 +11,7 @@ html {
   background-color: #eee;
   font-family: 'Lato', sans-serif;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

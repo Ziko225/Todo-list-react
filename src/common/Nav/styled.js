@@ -6,7 +6,7 @@ export const Nav = styled.nav`
     justify-content: center;
     align-items:center;
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: teal;
 `;
 
@@ -18,5 +18,9 @@ export const Link = styled(NavLink)`
 
     &.active{
         font-weight:800;
+    }
+    :hover{
+        color: rgb(200, 255, 255);
+        transition: 0.3s;
     }
 `;
