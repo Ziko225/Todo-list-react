@@ -6,6 +6,7 @@ import Main from "../../../common/Main";
 import Nav from "../../../common/Nav";
 import Section from "../../../common/Section";
 import { getTaskById } from "../tasksSlice";
+import { Content } from "./styled";
 
 function TaskPage() {
     const { id } = useParams();
@@ -21,8 +22,10 @@ function TaskPage() {
                     body={
                         task ?
                             <>
-                                <strong>Ukończono: {task.done ? "tak" : "Nie"}</strong>
-                                <p><strong>id:</strong> {id}</p>
+                                <Content>
+                                    <strong>Ukończono: {task.done ? "tak" : "Nie"}</strong>
+                                    <p><strong>id:</strong> {id}</p>
+                                </Content>
                             </>
                             :
                             " Nie znaleziono zadania!"

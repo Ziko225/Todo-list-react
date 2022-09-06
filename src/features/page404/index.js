@@ -9,12 +9,12 @@ function Page404() {
             <Header title="Błąd 404" />
             <Section
                 title="Strona o podanym adresie nie istnieje"
-                body={<>
-                    <ul>
-                        <li><Link to="/tasks">Powrót</Link></li>
-                    </ul>
-                </>
-                }
+                body={
+                    <>
+                        <ul>
+                            <li><Link to="/tasks">Powrót</Link></li>
+                        </ul>
+                    </>}
             />
         </Main>
     );
