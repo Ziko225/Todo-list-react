@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styled, { css } from "styled-components"
+import styled, { css } from "styled-components";
 
 export const List = styled.ul`
     padding: 0px;

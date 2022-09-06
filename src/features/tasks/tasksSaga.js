@@ -5,7 +5,7 @@ import { fetchExampleTasks, selectTasks, fetchExampleTasksLoading, fetchExampleT
 
 function* fetchExampleTasksHandler() {
     try {
-        yield delay(1000)
+        yield delay(500)
         const exapmleTasks = yield call(getExampleTasks)
         yield put(fetchExampleTasksLoading(exapmleTasks))
     } catch {

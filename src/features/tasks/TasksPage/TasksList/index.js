@@ -1,4 +1,4 @@
-import { List, Item, Content, Button, Link } from "./styled"
+import { List, Item, Content, Button, Link } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTaskDone, removeTask, selectHideDone, selectTasksByQuery } from "../../tasksSlice";
 import { useLocation } from "react-router-dom";

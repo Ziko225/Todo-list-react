@@ -1,4 +1,4 @@
-import { FormInput } from "../Form/styled"
+import { FormInput } from "../Form/styled";
 import searchQueryParamName from "../searchQueryParamName";
 import { useQueryParameter, useReplaceQueryParameter } from "./queryParameters";
 
@@ -22,4 +22,4 @@ const Search = () => {
     )
 };
 
-export default Search
+export default Search;

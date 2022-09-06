@@ -1,4 +1,4 @@
-import { Button, ButtonsBlock } from "./styled"
+import { Button, ButtonsBlock } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
 import {
     selectAreTasksEmpty,
