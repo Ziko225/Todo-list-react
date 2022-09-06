@@ -21,7 +21,7 @@ function Autor() {
                                 W wieku 17 lat przyjechałem do Warszawy.<br />
                                 Lubię jachty a całkiem niedawno polubiłem programować!
                             </Content>
-                            <Img src={require("./author.jpeg")} alt={"Author"}></Img>
+                            <Img src={require("./author.jpg")} alt={"Author"}></Img>
                         </Article>}>
                 </Section>
             </Main>
