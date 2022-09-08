@@ -1,14 +1,23 @@
-## Demo page:
+# Demo page:
 https://ziko225.github.io/Todo-list-react/
 
-## Technologies:
+![demo img](./img.png)
+
+# Technologies:
 - HTML
 - CSS 
   - Convention BEM
   - Flex 
+  - MediaQueries
 - JavaScript
+  - Immutability convention
   - Async / Await
+  - Babel
 - React
+  - create-react-app
+  - JSX
+  - React hooks
+  - Custom hooks
   - Create-React-App
   - React Router
   - React Redux
