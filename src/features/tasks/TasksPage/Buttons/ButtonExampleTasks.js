@@ -14,7 +14,7 @@ const ButtonExampleTasks = () => {
                 <>
                     <ButtonsBlock>
                         <Button
-                            disabled={exapmleTasksLoaded} onClick={() => dispatch(fetchExampleTasks())}>{exapmleTasksLoaded ? "Ładowanie.." : "Pobierz przykład"}
+                            disabled={exapmleTasksLoaded} onClick={() => dispatch(fetchExampleTasks())}>{exapmleTasksLoaded ? "Ładowanie.." : "Pobierz przykładowe zadania"}
                         </Button>
                     </ButtonsBlock >
                 </>

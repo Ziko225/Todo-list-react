@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Article = styled.article`
     width:100%;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
 `;
 
 export const Title = styled.span`

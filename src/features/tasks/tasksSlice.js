@@ -9,7 +9,7 @@ const tasksSlice = createSlice({
     },
     reducers: {
         addTask: ({ tasks }, { payload: task }) => {
-            tasks.push(task)
+            tasks.push(task);
         },
         toggleHideDone: state => {
             state.hideDone = !state.hideDone;
@@ -20,24 +20,22 @@ const tasksSlice = createSlice({
         },
         setAllDone: ({ tasks }) => {
             for (const task of tasks) {
-                task.done = true
+                task.done = true;
             }
         },
         removeTask: ({ tasks }, { payload: taskId }) => {
             const index = tasks.findIndex(({ id }) => id === taskId);
-            tasks.splice(index, 1)
+            tasks.splice(index, 1);
         },
         fetchExampleTasks: (state) => {
-            state.loading = true
+            state.loading = true;
         },
         fetchExampleTasksLoading: (state, { payload: tasks }) => {
             state.tasks = tasks;
-            state.loading = false
-            console.log("Loading")
+            state.loading = false;
         },
         fetchExampleTasksError: (state) => {
-            state.error = true
-            console.log("error")
+            state.error = true;
         },
     },
 });
@@ -67,7 +65,6 @@ export const getTaskById = (state, taskId) =>
 
 export const selectTasksByQuery = (state, query) => {
     const tasks = selectTasks(state);
-
     if (!query || query.trim() === "") {
         return tasks;
     }

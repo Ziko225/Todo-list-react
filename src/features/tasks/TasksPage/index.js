@@ -18,11 +18,11 @@ function TasksPage() {
         <Header title="Lista zadań" />
         <Section
           title="Dodaj nowe zadanie"
+          buttons={<ButtonExampleTasks />}
           body={<Form addTask={addTask} />}
         />
         <Section
           title="Wyszukiwarka"
-          buttons={<ButtonExampleTasks />}
           body={<Search />}
         />
         <Section

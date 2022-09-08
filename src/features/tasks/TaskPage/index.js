@@ -1,4 +1,3 @@
-
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Header from "../../../common/Header";
@@ -6,7 +5,7 @@ import Main from "../../../common/Main";
 import Nav from "../../../common/Nav";
 import Section from "../../../common/Section";
 import { getTaskById } from "../tasksSlice";
-import { Content } from "./styled";
+import { Content, Id } from "./styled";
 
 function TaskPage() {
     const { id } = useParams();
@@ -24,7 +23,7 @@ function TaskPage() {
                             <>
                                 <Content>
                                     <strong>Ukończono: {task.done ? "tak" : "Nie"}</strong>
-                                    <p><strong>id:</strong> {id}</p>
+                                    <Id><p><strong>ID Zadania:</strong> {id}</p></Id>
                                 </Content>
                             </>
                             :

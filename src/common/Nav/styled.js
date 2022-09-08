@@ -17,13 +17,13 @@ export const Link = styled(NavLink)`
     font-weight:300;
 
     :hover{
-        color: rgb(200, 255, 255);
-        transition: 0.3s;
+        border-bottom:1px solid;
     }
 
     &.active{
         font-weight:800;
         color:white;
         cursor: default;
+        border-bottom: none;
     }
 `;
